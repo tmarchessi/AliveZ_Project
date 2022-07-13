@@ -21,8 +21,6 @@ func fire():
 	get_parent().add_child(bullet)
 	$Timer.set_wait_time(1)
 	
-
-
 func _on_Timer_timeout():
 	if player != null:
 		fire()
