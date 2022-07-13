@@ -18,10 +18,11 @@ func _physics_process(delta):
 		has_fired= true 
 	
 	#Animations
-	if velocity != Vector2.ZERO:
-		playback.travel("zombie_walk")
-	else:
-		playback.travel("zombie_idle")
+	if not has_fired:
+		if velocity != Vector2.ZERO:
+			playback.travel("zombie_walk")
+		else:
+			playback.travel("zombie_idle")
 	
 	if Input.is_action_just_pressed("ui_left") and _facing_right:
 		_facing_right = false
