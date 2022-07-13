@@ -1,12 +1,18 @@
 extends Area2D
 
-var SPEED = 300	
+var move = Vector2.ZERO
+var look_vec = Vector2.ZERO
+var player = null
+var speed = 3
 
 func _ready():
-	connect("body_entered", self, "_on_body_entered")
+	look_vec=player.position - global_position
 	
 func _on_body_entered(body: Node):
 	print("F")
 
 func _physics_process(delta):
-	position += SPEED *transform.x*delta
+	move = Vector2.ZERO
+	move=move.move_toward(look_vec, delta)
+	move=move.normalized()*speed
+	position += move

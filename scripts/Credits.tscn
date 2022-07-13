@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/font/Haedus_Font_1_10/Haedus.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/music/Música de Terror  Sin Copyright  'Ataque Zombie'.wav" type="AudioStream" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 36
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=3]
+Button/fonts/font = SubResource( 1 )
+Label/fonts/font = SubResource( 5 )
+TextEdit/fonts/font = SubResource( 4 )
+WindowDialog/fonts/title_font = SubResource( 2 )
+
+[node name="MarginContainer" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -2.0
+theme = SubResource( 3 )
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 602.0
+
+[node name="TextEdit" type="TextEdit" parent="PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1017.0
+margin_bottom = 595.0
+text = "                                        CREDTITOS
+						                                 														
+ CREADORES: Matias venegas, javiera romero y tomas marchessi
+
+  fuentes de itch.io: 
+    -zombie tostada: lhteam
+	-<zombie y militar no tostadas: pitigamedev
+	-granadas: mtk
+	-Balas: 25349023
+	-fuente de texto: ggbotnet
+	-explosiones: xyezawr
+	-musica: sordojrphotography"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+autoplay = true

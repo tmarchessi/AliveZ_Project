@@ -4,16 +4,17 @@
 [ext_resource path="res://scripts/Bullet.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7.5, 3 )
+extents = Vector2( 24, 6.5 )
 
 [node name="Bullet" type="Area2D"]
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -0.5 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -1.19209e-07 )
+position = Vector2( 0, 4.76837e-07 )
 rotation = 1.5708
-scale = Vector2( 0.566855, 0.511274 )
+scale = Vector2( 1.27957, 1.58035 )
 texture = ExtResource( 1 )

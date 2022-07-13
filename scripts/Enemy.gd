@@ -1,13 +1,28 @@
 extends KinematicBody2D
 
-onready var bullet_spawn = $BulletSpawn
-var Bullet = preload("res://Bullet.tscn")
+onready var bullets = preload("res://Bullet.tscn")
 
-func _on_area_area_entered(area):
-	if area.is_in_group("zombie"):
-		$Enemy.fire(area.global_position)
+var player = null
+var move = Vector2.ZERO
+var speed = 1
 
+func _on_DetectionArea_body_entered(body):
+	if body != self:
+		player = body
+
+
+func _on_DetectionArea_body_exited(body):
+	player=null
+	
 func fire():
-	var bullet = Bullet.instance()
+	var bullet = bullets.instance()
+	bullet.position = get_global_position()
+	bullet.player = player
 	get_parent().add_child(bullet)
-	bullet.global_position = bullet_spawn.global_position
+	$Timer.set_wait_time(1)
+	
+
+
+func _on_Timer_timeout():
+	if player != null:
+		fire()
