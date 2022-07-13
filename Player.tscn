@@ -220,7 +220,7 @@ position = Vector2( 0, -1.90735e-06 )
 scale = Vector2( 0.695313, 0.744141 )
 texture = ExtResource( 9 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=["zombie"]]
 anims/RESET = SubResource( 2 )
 anims/zombie_attack = SubResource( 14 )
 anims/zombie_death = SubResource( 11 )

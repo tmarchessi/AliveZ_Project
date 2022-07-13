@@ -96,12 +96,14 @@ transitions = [ "perkin_idle", "perkin_walk", SubResource( 9 ), "perkin_walk", "
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=13]
 
-[node name="Perkin" type="KinematicBody2D"]
+[node name="Perkin" type="KinematicBody2D" groups=["zombie"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["zombie"]]
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.999999, -12 )
+scale = Vector2( 0.65625, 0.671875 )
 texture = ExtResource( 1 )
 hframes = 25
 

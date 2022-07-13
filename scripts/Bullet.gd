@@ -7,3 +7,6 @@ func _ready():
 	
 func _on_body_entered(body: Node):
 	print("F")
+
+func _physics_process(delta):
+	position += SPEED *transform.x*delta
