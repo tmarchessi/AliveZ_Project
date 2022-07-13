@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=2]
+[gd_scene load_steps=84 format=2]
 
 [ext_resource path="res://sprites/FreeCharacters/Zombie_Free/Walk/0001.png" type="Texture" id=1]
 [ext_resource path="res://sprites/FreeCharacters/Zombie_Free/Walk/0002.png" type="Texture" id=2]
@@ -64,8 +64,8 @@
 [ext_resource path="res://sprites/FreeCharacters/Zombie_Free/Attack/0468.png" type="Texture" id=62]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 12.0
-height = 16.0
+radius = 22.0
+height = 38.0
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -190,33 +190,35 @@ switch_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id=19]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=20]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
 
 [sub_resource type="AnimationNodeStateMachine" id=9]
 states/zombie_attack/node = SubResource( 15 )
-states/zombie_attack/position = Vector2( 606, 167.333 )
+states/zombie_attack/position = Vector2( 136.333, 101.797 )
 states/zombie_death/node = SubResource( 12 )
-states/zombie_death/position = Vector2( 329.667, 160.333 )
+states/zombie_death/position = Vector2( 554.999, 77.0688 )
 states/zombie_idle/node = SubResource( 5 )
-states/zombie_idle/position = Vector2( 328.333, 76.7778 )
+states/zombie_idle/position = Vector2( 343, 28.6296 )
 states/zombie_walk/node = SubResource( 6 )
-states/zombie_walk/position = Vector2( 606, 70.3333 )
-transitions = [ "zombie_idle", "zombie_walk", SubResource( 7 ), "zombie_walk", "zombie_idle", SubResource( 8 ), "zombie_idle", "zombie_death", SubResource( 13 ), "zombie_walk", "zombie_attack", SubResource( 16 ), "zombie_attack", "zombie_walk", SubResource( 17 ), "zombie_attack", "zombie_idle", SubResource( 18 ), "zombie_idle", "zombie_attack", SubResource( 19 ), "zombie_attack", "zombie_death", SubResource( 20 ) ]
+states/zombie_walk/position = Vector2( 348.333, 212.333 )
+transitions = [ "zombie_idle", "zombie_walk", SubResource( 7 ), "zombie_walk", "zombie_idle", SubResource( 8 ), "zombie_idle", "zombie_death", SubResource( 13 ), "zombie_idle", "zombie_attack", SubResource( 16 ), "zombie_attack", "zombie_idle", SubResource( 17 ), "zombie_attack", "zombie_walk", SubResource( 18 ), "zombie_walk", "zombie_attack", SubResource( 19 ), "zombie_attack", "zombie_death", SubResource( 20 ), "zombie_walk", "zombie_death", SubResource( 21 ) ]
 start_node = "zombie_idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=10]
 
 [node name="Player" type="KinematicBody2D"]
-collision_layer = 2
 script = ExtResource( 30 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -3, 17 )
+position = Vector2( 2, -1 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -1.90735e-06 )
 scale = Vector2( 0.695313, 0.744141 )
-texture = ExtResource( 6 )
+texture = ExtResource( 9 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=["zombie"]]
 anims/RESET = SubResource( 2 )
