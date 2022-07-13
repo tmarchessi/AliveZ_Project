@@ -34,6 +34,7 @@ func _physics_process(delta):
 
 func throw():
 	var granade = Granade.instance()
+	granade.name = "granada"
 	get_parent().add_child(granade)
 	granade.global_position = granade_spawn.global_position 
 	if not _facing_right:
