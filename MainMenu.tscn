@@ -29,26 +29,35 @@ scale = Vector2( 0.841019, 0.579208 )
 texture = ExtResource( 3 )
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-margin_left = 454.0
-margin_top = 210.0
-margin_right = 570.0
-margin_bottom = 390.0
+margin_left = 434.0
+margin_top = 167.0
+margin_right = 590.0
+margin_bottom = 432.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 109.0
-margin_bottom = 173.0
+margin_right = 149.0
+margin_bottom = 258.0
 
 [node name="Play" type="Button" parent="PanelContainer/VBoxContainer"]
-margin_right = 102.0
+margin_right = 142.0
 margin_bottom = 81.0
+button_mask = 5
 text = "PLAY"
 
-[node name="Quit" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="Credits" type="Button" parent="PanelContainer/VBoxContainer"]
 margin_top = 85.0
-margin_right = 102.0
+margin_right = 142.0
 margin_bottom = 166.0
+text = "CREDITS"
+
+[node name="Quit" type="Button" parent="PanelContainer/VBoxContainer"]
+margin_top = 170.0
+margin_right = 142.0
+margin_bottom = 251.0
 text = "QUIT"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Credits" to="." method="_on_Credits_pressed"]
