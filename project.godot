@@ -46,6 +46,14 @@ pause={
  ]
 }
 
+[layer_names]
+
+3d_render/layer_1="world"
+3d_render/layer_2="player"
+3d_render/layer_3="playerhurtbox"
+3d_render/layer_4="enemyhutrbox"
+3d_render/layer_5="perkin"
+
 [physics]
 
 common/enable_pause_aware_picking=true
