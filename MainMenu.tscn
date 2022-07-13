@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/font/Haedus_Font_1_10/Haedus.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/inicio/fondoZ.png" type="Texture" id=2]
 [ext_resource path="res://assets/inicio/logo.png" type="Texture" id=3]
 [ext_resource path="res://scripts/MainMenu.gd" type="Script" id=4]
+[ext_resource path="res://assets/music/Música de Terror  Sin Copyright  'Ataque Zombie'.wav" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 65
@@ -52,3 +53,7 @@ margin_top = 85.0
 margin_right = 102.0
 margin_bottom = 166.0
 text = "QUIT"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
