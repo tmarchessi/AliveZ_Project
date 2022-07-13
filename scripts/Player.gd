@@ -7,17 +7,11 @@ onready var playback =$AnimationTree.get("parameters/playback")
 
 func _physics_process(delta):
 	var velocity = Vector2.ZERO
-	if Input.is_action_pressed("ui_right"):
-		velocity.x += 1.0
-	if Input.is_action_pressed("ui_left"):
-		velocity.x -= 1.0
-	if Input.is_action_pressed("ui_up"):
-		velocity.y -= 1.0
-	if Input.is_action_pressed("ui_down"):
-		velocity.y += 1.0
+	velocity.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+	velocity.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	
 	#Animations
-	if abs(velocity.x) > 0 or abs(velocity.y) > 0:
+	if velocity != Vector2.ZERO:
 		playback.travel("zombie_walk")
 	else:
 		playback.travel("zombie_idle")
