@@ -53,8 +53,8 @@
 [ext_resource path="res://sprites/FreeCharacters/Zombie_Free/Death/0137.png" type="Texture" id=51]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 22.0
-height = 38.0
+radius = 16.0
+height = 2.0
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -152,15 +152,16 @@ start_node = "zombie_idle"
 script = ExtResource( 30 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 2, -1 )
+position = Vector2( 0.500031, 5.62503 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -1.90735e-06 )
+position = Vector2( 4.50003, -15.375 )
 scale = Vector2( 0.695313, 0.744141 )
-texture = ExtResource( 9 )
+texture = ExtResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
 anims/RESET = SubResource( 2 )
 anims/zombie_death = SubResource( 11 )
 anims/zombie_idle = SubResource( 3 )
