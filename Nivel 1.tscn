@@ -40,13 +40,10 @@ position = Vector2( 968, 280 )
 [node name="Enemy" type="YSort" parent="."]
 
 [node name="Enemy2" parent="Enemy" instance=ExtResource( 8 )]
-position = Vector2( 165, 104 )
+position = Vector2( 237, 346 )
 
 [node name="Enemy" parent="Enemy" instance=ExtResource( 8 )]
-position = Vector2( 541, 417 )
-
-[node name="Enemy3" parent="Enemy" instance=ExtResource( 8 )]
-position = Vector2( 253, 315 )
+position = Vector2( 619, 435 )
 
 [node name="perkin" type="YSort" parent="."]
 
@@ -54,7 +51,7 @@ position = Vector2( 253, 315 )
 position = Vector2( 723, 152 )
 
 [node name="Perkin" parent="perkin" instance=ExtResource( 7 )]
-position = Vector2( 780, 192 )
+position = Vector2( 793, 182 )
 
 [node name="Salida" parent="." instance=ExtResource( 10 )]
 position = Vector2( 40, 192 )
