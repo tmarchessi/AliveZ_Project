@@ -4,6 +4,8 @@ var granada = null
 var move = Vector2.ZERO
 var speed = 1
 var granadas = []
+export var max_health = 6
+var health = max_health
 
 func _physics_process(delta):
 	move = Vector2.ZERO
@@ -33,6 +35,10 @@ func _on_Area2D_area_exited(area):
 
 func _on_dead_area_entered(area):
 	if (area.name == "bullet_area"):
+		health -= 3
+		if health <= 0:
+			health = 0
+			area.get_parent().queue_free()
+			queue_free()
 		area.get_parent().queue_free()
-		queue_free()
 

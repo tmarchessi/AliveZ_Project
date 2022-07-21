@@ -11,5 +11,10 @@ func _ready():
 	pass
 
 
-func _on_Player_health_changed():
-	pass # Replace with function body.
+func _on_Player_health_changed(player_health):
+	update_health(player_health)
+	
+
+func update_health(new_value):
+	number_label.text = str(new_value)
+	bar.value = new_value
