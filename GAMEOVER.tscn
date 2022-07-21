@@ -21,7 +21,7 @@ centered = false
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 1017.0
-margin_bottom = 593.0
+margin_bottom = 612.0
 custom_constants/margin_right = 80
 custom_constants/margin_top = 80
 custom_constants/margin_left = 80
@@ -31,7 +31,7 @@ custom_constants/margin_bottom = 80
 margin_left = 80.0
 margin_top = 80.0
 margin_right = 930.0
-margin_bottom = 506.0
+margin_bottom = 525.0
 custom_constants/separation = 60
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/rows"]
@@ -44,26 +44,35 @@ align = 1
 [node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/rows"]
 margin_top = 160.0
 margin_right = 850.0
-margin_bottom = 340.0
+margin_bottom = 445.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/rows/CenterContainer"]
-margin_left = 333.0
-margin_right = 516.0
-margin_bottom = 180.0
+margin_left = 329.0
+margin_right = 521.0
+margin_bottom = 285.0
 custom_constants/separation = 30
 
 [node name="RESTART" type="Button" parent="PanelContainer/MarginContainer/rows/CenterContainer/VBoxContainer"]
-margin_right = 183.0
+margin_right = 192.0
 margin_bottom = 75.0
 custom_fonts/font = ExtResource( 2 )
 text = " RESTART "
 
-[node name="EXIT" type="Button" parent="PanelContainer/MarginContainer/rows/CenterContainer/VBoxContainer"]
+[node name="MAIN MENU" type="Button" parent="PanelContainer/MarginContainer/rows/CenterContainer/VBoxContainer"]
 margin_top = 105.0
-margin_right = 183.0
+margin_right = 192.0
 margin_bottom = 180.0
+custom_fonts/font = ExtResource( 2 )
+text = "MAIN MENU"
+
+[node name="EXIT" type="Button" parent="PanelContainer/MarginContainer/rows/CenterContainer/VBoxContainer"]
+margin_top = 210.0
+margin_right = 192.0
+margin_bottom = 285.0
 custom_fonts/font = ExtResource( 2 )
 text = "EXIT"
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/rows/CenterContainer/VBoxContainer/RESTART" to="." method="_on_RESTART_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/rows/CenterContainer/VBoxContainer/MAIN MENU" to="." method="_on_RESTART_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/rows/CenterContainer/VBoxContainer/MAIN MENU" to="." method="_on_MAIN_MENU_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/rows/CenterContainer/VBoxContainer/EXIT" to="." method="_on_EXIT_pressed"]

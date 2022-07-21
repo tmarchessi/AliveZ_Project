@@ -1,0 +1,22 @@
+[gd_resource type="Theme" load_steps=6 format=2]
+
+[ext_resource path="res://assets/font/Haedus_Font_1_10/Haedus.otf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 36
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 1 )
+
+[resource]
+Button/fonts/font = SubResource( 1 )
+Label/fonts/font = SubResource( 5 )
+TextEdit/fonts/font = SubResource( 4 )
+WindowDialog/fonts/title_font = SubResource( 2 )
