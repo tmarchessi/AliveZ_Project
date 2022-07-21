@@ -2,14 +2,23 @@ extends KinematicBody2D
 
 var player = null
 onready var BULLET_SCENE = preload("res://bulletnuevo.tscn")
+var bodies = []
 
 func _on_Area2D_body_entered(body):
-	if body != self:
-		player = body
+	if body != self and body.name !="Enemy":
+		bodies.append(body)
+		player = bodies[0]
+		print(bodies)
 
 
 func _on_Area2D_body_exited(body):
-	player = null
+	bodies.erase(body)
+	if bodies.empty():
+		player = null
+	else:
+		player = bodies[0]
+	print(bodies)
+	
 
 
 func _on_Timer_timeout():

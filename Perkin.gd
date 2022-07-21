@@ -16,9 +16,17 @@ func _physics_process(delta):
 	move = move_and_collide(move)
 
 func _on_Area2D_area_entered(area):
-	print(area.get_parent().name)
-	if area != self and (area.get_parent().name == "YSort"):
+	print(area.name)
+	if area != self and (area.name == "granada"):
 		granada = area
 
 func _on_Area2D_area_exited(area):
-	granada = null
+	if (area.name == "granada"):
+		granada = null
+
+
+func _on_dead_area_entered(area):
+	if (area.name == "bullet_area"):
+		area.get_parent().queue_free()
+		queue_free()
+	pass

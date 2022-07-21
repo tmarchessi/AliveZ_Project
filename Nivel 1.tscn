@@ -40,5 +40,10 @@ position = Vector2( 144, 160 )
 [node name="Enemy" parent="Enemy" instance=ExtResource( 6 )]
 position = Vector2( 88, 360 )
 
-[node name="Perkin" parent="." instance=ExtResource( 7 )]
-position = Vector2( 272, 224 )
+[node name="perkin" type="YSort" parent="."]
+
+[node name="Perkin2" parent="perkin" instance=ExtResource( 7 )]
+position = Vector2( 432, 104 )
+
+[node name="Perkin" parent="perkin" instance=ExtResource( 7 )]
+position = Vector2( 424, 256 )

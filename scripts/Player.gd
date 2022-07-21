@@ -39,3 +39,11 @@ func throw():
 	granade.global_position = granade_spawn.global_position 
 	if not _facing_right:
 		granade.rotation = PI 
+
+
+func _on_Area2D_area_entered(area):
+	if (area.name == "bullet_area"):
+		area.get_parent().queue_free()
+		queue_free()
+	pass
+
