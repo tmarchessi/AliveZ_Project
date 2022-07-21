@@ -5,6 +5,7 @@ onready var quit = $PanelContainer/VBoxContainer/Quit
 onready var credit = $PanelContainer/VBoxContainer/Button
 
 func _ready():
+	get_tree().paused = false
 	play.connect("pressed", self, "_on_play_pressed")
 	quit.connect("pressed", self, "_on_exit_pressed")
 	credit.connect("pressed", self, "_on_credit_pressed")
