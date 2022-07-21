@@ -5,7 +5,8 @@ onready var BULLET_SCENE = preload("res://bulletnuevo.tscn")
 var bodies = []
 
 func _on_Area2D_body_entered(body):
-	if body != self and body.name !="Enemy":
+	print(body)
+	if body != self and body.name[0] !="E" and body.name !="cliff":
 		bodies.append(body)
 		player = bodies[0]
 		print(bodies)

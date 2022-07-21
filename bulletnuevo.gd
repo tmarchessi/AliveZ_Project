@@ -15,3 +15,8 @@ func _physics_process(delta):
 	move = move.move_toward(look_vec,delta)
 	move = move.normalized() * speed
 	position += move
+
+
+func _on_bullet_area_body_entered(body):
+	if body.name == "cliff":
+		queue_free()

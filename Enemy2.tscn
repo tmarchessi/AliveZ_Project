@@ -144,7 +144,7 @@ graph_offset = Vector2( -656.711, 0 )
 radius = 151.003
 
 [node name="Enemy" type="KinematicBody2D"]
-scale = Vector2( 1.19575, 1.19575 )
+scale = Vector2( 0.995009, 0.995009 )
 script = ExtResource( 52 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
