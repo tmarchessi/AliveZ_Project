@@ -61,5 +61,8 @@ func _on_Area2D_area_entered(area):
 			queue_free()
 		area.get_parent().queue_free()
 		emit_signal("health_changed", health)
+		
+	if (area.name == "next_lvl"):
+		get_tree().change_scene("res://MainMenu.tscn")
 	pass
 
