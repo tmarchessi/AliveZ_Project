@@ -40,7 +40,6 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
 animation = "animated bullet"
-frame = 1
 playing = true
 offset = Vector2( 0, -1 )
 

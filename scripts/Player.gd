@@ -1,7 +1,14 @@
 extends KinematicBody2D
 
+signal health_changed
+signal died
+
 export(int) var speed = 100.0
 var _facing_right = true
+export var max_health = 10
+var health = max_health
+enum STATES {ALIVE,DEAD}
+var state = STATES.ALIVE
 
 onready var playback =$AnimationTree.get("parameters/playback")
 onready var granade_spawn = $GranadeSpawn
@@ -42,8 +49,17 @@ func throw():
 
 
 func _on_Area2D_area_entered(area):
+	if state == STATES.DEAD:
+		return
 	if (area.name == "bullet_area"):
+		health -= 3
+		if health <= 0:
+			health = 0
+			state = STATES.DEAD
+			emit_signal("died")
+			area.get_parent().queue_free()
+			queue_free()
 		area.get_parent().queue_free()
-		queue_free()
+		emit_signal("health_changed", health)
 	pass
 
