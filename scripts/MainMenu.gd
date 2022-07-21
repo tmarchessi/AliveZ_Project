@@ -13,7 +13,7 @@ func _on_play_pressed():
 	get_tree().change_scene("res://Main.tscn")
 
 func _on_exit_pressed():
-	get_tree().exit()
+	get_tree().quit()
  
 func _on_credit_pressed():
 	get_tree().change_scene("res://Credits.tscn")

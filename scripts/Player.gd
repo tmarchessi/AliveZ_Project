@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export(int) var speed = 80.0
+export(int) var speed = 100.0
 var _facing_right = true
 
 onready var playback =$AnimationTree.get("parameters/playback")

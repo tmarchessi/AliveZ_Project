@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var granada = null
 var move = Vector2.ZERO
-var speed = 10
+var speed = 1
 
 func _physics_process(delta):
 	move = Vector2.ZERO
