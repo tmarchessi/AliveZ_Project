@@ -3,7 +3,7 @@ extends KinematicBody2D
 signal health_changed
 signal died
 
-export(int) var speed = 100.0
+export(int) var speed = 100
 var _facing_right = true
 export var max_health = 10
 var health = max_health
@@ -59,7 +59,12 @@ func _on_Area2D_area_entered(area):
 			emit_signal("died")
 			area.get_parent().queue_free()
 			queue_free()
+			get_tree().change_scene("res://GAMEOVER.tscn")
 		area.get_parent().queue_free()
 		emit_signal("health_changed", health)
+	if (area.name == "Salida"):
+		get_tree().change_scene("res://Nivel 2.tscn")
+	if (area.name == "Salida2"):
+		get_tree().change_scene("res://Credits.tscn")
 	pass
 

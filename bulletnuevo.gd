@@ -3,7 +3,7 @@ extends Node2D
 var move = Vector2.ZERO
 var look_vec = Vector2.ZERO
 var player = null
-var speed = 3
+var speed = 20
 
 func _ready():
 	
