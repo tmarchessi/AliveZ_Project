@@ -1,22 +1,15 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://assets/font/Haedus_Font_1_10/Haedus.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://MainMenu.tres" type="Theme" id=1]
 [ext_resource path="res://assets/inicio/fondoZ.png" type="Texture" id=2]
 [ext_resource path="res://assets/inicio/logo.png" type="Texture" id=3]
 [ext_resource path="res://scripts/MainMenu.gd" type="Script" id=4]
 [ext_resource path="res://assets/music/Música de Terror  Sin Copyright  'Ataque Zombie'.wav" type="AudioStream" id=5]
 
-[sub_resource type="DynamicFont" id=1]
-size = 65
-font_data = ExtResource( 1 )
-
-[sub_resource type="Theme" id=2]
-Button/fonts/font = SubResource( 1 )
-
 [node name="MarginContainer" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = SubResource( 2 )
+theme = ExtResource( 1 )
 script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -30,9 +23,9 @@ scale = Vector2( 0.841019, 0.579208 )
 texture = ExtResource( 3 )
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-margin_left = 434.0
+margin_left = 413.0
 margin_top = 167.0
-margin_right = 590.0
+margin_right = 611.0
 margin_bottom = 432.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -40,26 +33,28 @@ size_flags_vertical = 4
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 149.0
+margin_right = 191.0
 margin_bottom = 258.0
 
 [node name="Play" type="Button" parent="PanelContainer/VBoxContainer"]
-margin_right = 142.0
+margin_right = 184.0
 margin_bottom = 81.0
 text = "PLAY"
 
-[node name="Quit" type="Button" parent="PanelContainer/VBoxContainer"]
-margin_top = 85.0
-margin_right = 142.0
-margin_bottom = 166.0
-text = "QUIT"
-
 [node name="Button" type="Button" parent="PanelContainer/VBoxContainer"]
+margin_top = 85.0
+margin_right = 184.0
+margin_bottom = 166.0
+text = " Credits "
+
+[node name="Quit" type="Button" parent="PanelContainer/VBoxContainer"]
 margin_top = 170.0
-margin_right = 142.0
+margin_right = 184.0
 margin_bottom = 251.0
-text = "Credits"
+text = "QUIT"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 autoplay = true
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Play" to="." method="_on_Play_pressed"]
