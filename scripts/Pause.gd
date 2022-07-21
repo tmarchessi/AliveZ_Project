@@ -1,6 +1,15 @@
 extends CanvasLayer
 
+func _ready():
+	get_tree().paused = true
 
-func _input(evecnt):
-	if Input.is_action_pressed("ui_cancel"):
-		get_tree().paused = !get_tree().paused 
+func _on_ContinueButton_pressed():
+	get_tree().paused = false
+	queue_free()
+
+func _on_QuitButton_pressed():
+	get_tree().quit()
+
+func _on_MainMenuButton_pressed():
+	get_tree().paused = false
+	get_tree().change_scene("res://MainMenu.tscn")
